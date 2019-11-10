@@ -1,0 +1,12 @@
+.ctn {
+    position: absolute;
+    top:8%;
+    height: 92%;
+    padding: 3% 25%;
+}
+
+@media screen and (max-width: 768px) {
+    .ctn {
+        padding: 3% 0;
+    }
+}

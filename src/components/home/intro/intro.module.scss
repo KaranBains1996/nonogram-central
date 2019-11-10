@@ -1,0 +1,36 @@
+.ctn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading {
+    margin-bottom: 40px;
+    font-size: 45px;
+}
+
+.p {
+    font-size: 20px;
+}
+
+.illus {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-ctn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    .btn {
+        background-color: #41B883;
+        font-weight: bold;
+        text-transform: capitalize;
+
+        &:hover {
+            background-color: rgb(103, 214, 164);
+        }
+    }
+}
