@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .heading {
@@ -17,20 +18,36 @@
 
 .illus {
     margin-top: 20px;
-    width: 100%;
+    width: 60%;
+}
+
+.toggleBtn {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: inherit;
+    font-family: inherit;
+    color: #41B883;
+    cursor: pointer;
+}
+
+.no-decoration {
+    text-decoration: none;
 }
 
 .btn-ctn {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+
     .btn {
         background-color: #41B883;
         font-weight: bold;
         text-transform: capitalize;
 
         &:hover {
-            background-color: rgb(103, 214, 164);
+            background-color: #00A28B;
         }
     }
 }
