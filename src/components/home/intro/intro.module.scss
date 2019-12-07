@@ -40,14 +40,4 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-
-    .btn {
-        background-color: #41B883;
-        font-weight: bold;
-        text-transform: capitalize;
-
-        &:hover {
-            background-color: #00A28B;
-        }
-    }
 }

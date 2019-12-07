@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
 import styles from './intro.module.scss';
 import puzzleillus from '../../../assets/images/nonogram.gif';
+
+import Button from '../../UI/button/button';
 
 class Intro extends Component {
 
@@ -46,13 +47,11 @@ class Intro extends Component {
 
         <img className={styles.illus} src={puzzleillus} alt="puzzle illustration" />
         <div className={styles['btn-ctn']}>
-          <Button variant="contained" color="primary" className={styles.btn}>
-            Get Started
-          </Button>
+          <Link to="/random" className={styles['no-decoration']}>
+            <Button label="Get Started" />
+          </Link>
           <Link to="/tutorial" className={styles['no-decoration']}>
-            <Button variant="contained" color="primary" className={styles.btn}>
-              Learn More
-            </Button>
+            <Button label="Learn More" />
           </Link>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './navbar.module.scss';
 
 class Navbar extends Component {
@@ -12,7 +14,7 @@ class Navbar extends Component {
   }
 
   closeNavHandler = () => {
-    this.setState({ navOpen: false});
+    this.setState({ navOpen: false });
   }
 
   render() {
@@ -25,17 +27,24 @@ class Navbar extends Component {
     return (
       <nav>
         <div className={styles.logo}>
-          <h4>Nonogram Builder</h4>
+          <Link to="/" className={styles['no-decoration']}>
+            <h4>Nonogram Builder</h4>
+          </Link>
         </div>
         <ul className={navClasses.join(' ')} onClick={this.closeNavHandler}>
           <li>
             <a href="/">Home</a>
+            <Link to="/" className={styles['no-decoration']}></Link>
           </li>
           <li>
-            <a href="/">FAQ</a>
+            <Link to="/" className={styles['no-decoration']}>
+              FAQ
+            </Link>
           </li>
           <li>
-            <a href="/">Contact</a>
+            <Link to="/" className={styles['no-decoration']}>
+              Contact
+            </Link>
           </li>
         </ul>
         <div className={burgerClasses.join(' ')} onClick={this.toggleNavHandler}>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styles from './home.module.scss';
 
 import Intro from './intro/intro';
-import Tutorial from './tutorial/tutorial';
 
 class Home extends Component {
   render() {
