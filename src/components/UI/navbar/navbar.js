@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import styles from './navbar.module.scss';
+
+import { loginAction, logoutAction } from '../../../actions/actions';
 
 class Navbar extends Component {
 
@@ -17,7 +21,21 @@ class Navbar extends Component {
     this.setState({ navOpen: false });
   }
 
+  toggleAuthHandler = () => {
+    if (this.props.isLoggedIn) {
+      this.props.logoutAction();
+    } else {
+      this.props.loginAction();
+    }
+  }
+
   render() {
+    let btnText;
+    if (this.props.isLoggedIn) {
+      btnText = 'Logout';
+    } else {
+      btnText = 'Login';
+    }
     const navClasses = [styles['nav-links']];
     const burgerClasses = [styles.burger];
     if (this.state.navOpen) {
@@ -31,6 +49,7 @@ class Navbar extends Component {
             <h4>Nonogram Builder</h4>
           </Link>
         </div>
+        <button onClick={this.toggleAuthHandler} label="Login">{btnText}</button>
         <ul className={navClasses.join(' ')} onClick={this.closeNavHandler}>
           <li>
             <a href="/">Home</a>
@@ -57,4 +76,15 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    isLoggedIn: state.auth.isLoggedIn
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ loginAction, logoutAction }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
